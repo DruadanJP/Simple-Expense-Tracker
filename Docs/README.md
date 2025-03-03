@@ -5,9 +5,7 @@ Expense Tracker is a very simple and intuitive application designed to help you 
 
 ## Features
 - Add and categorize expenses
-- Track income sources
-- Generate financial reports
-- Visualize spending patterns with charts
+- Generate financial reports with tables
 
 ## Installation
 1. Clone the repository:
