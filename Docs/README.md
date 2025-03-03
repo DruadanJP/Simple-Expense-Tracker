@@ -1,7 +1,7 @@
 # Expense Tracker
 
 ## Overview
-Expense Tracker is a very simple and intuitive application designed to help you manage your personal finances. Track your income, expenses, and savings effortlessly. The code should be easy to follow and understand. A more precise explanation here: [Explanation](Docs/Explanation.md) 
+Expense Tracker is a very simple and intuitive application designed to help you manage your personal finances. Track your expenses effortlessly. The code should be easy to follow and understand. A more precise explanation here: [Explanation](Docs/Explanation.md) 
 
 ## Features
 - Add and categorize expenses
