@@ -11,6 +11,9 @@ def add_expense(expenses, amount, category, date, filename):
     save_expenses(expenses, filename)
 
 def all_expenses(filename):
+    if not os.path.exists(filename):
+        print(f"No expenses found. The file {filename} does not exist.")
+        return
     with open(filename, "r") as f:
         expenses = json.load(f)
         df = pd.DataFrame(expenses)
@@ -18,15 +21,21 @@ def all_expenses(filename):
     print(tabulate(df, headers='keys', tablefmt='psql', showindex=False))
 
 def calculate_expenses(filename):
+    if not os.path.exists(filename):
+        return 0
     with open(filename, "r") as f:
         return sum([expense["amount"] for expense in json.load(f)])
 
 def filter_category(category, filename):
+    if not os.path.exists(filename):
+        return []
     with open(filename, "r") as f:
         expenses = json.load(f)
         return [expense for expense in expenses if expense["category"] == category]
     
 def filter_date(date, filename):
+    if not os.path.exists(filename):
+        return []
     with open(filename, "r") as f:
         expenses = json.load(f)
         return [expense for expense in expenses if expense["date"] == date.isoformat()]
@@ -36,8 +45,8 @@ def save_expenses(expenses, filename):
         with open(filename, "r") as f:
             existing_expenses = json.load(f)
             expenses = existing_expenses + expenses
-        with open(filename, "w") as f:
-            json.dump(expenses, f)
+    with open(filename, "w") as f:
+        json.dump(expenses, f)
 
 def get_date_input(prompt):
     while True:
